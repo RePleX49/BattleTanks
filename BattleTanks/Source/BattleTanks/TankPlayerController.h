@@ -15,7 +15,7 @@ class BATTLETANKS_API ATankPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 
-public:
+private:
 	ATank* GetControlledTank() const;
 	
 	// called only once when begin play
@@ -27,4 +27,14 @@ public:
 	// aims barrel towards crosshair in 3D space
 	void AimTowardsCrosshair();
 	
+	// returns HitLocation FVector from linetrace through crosshair
+	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
+
+	bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const;
+
+	UPROPERTY(EditAnywhere)
+	float CrossHairXLocation = 0.5f;
+
+	UPROPERTY(EditAnywhere)
+	float CrossHairYLocation = 0.33333f;
 };
