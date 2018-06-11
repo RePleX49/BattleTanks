@@ -30,11 +30,15 @@ private:
 	// returns HitLocation FVector from linetrace through crosshair
 	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
 
-	bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const;
+	// returns the look vector hit location
+	bool GetLookVectorHitLocation(FVector2D ScreenLocation, FVector& HitLocation) const;
 
 	UPROPERTY(EditAnywhere)
 	float CrossHairXLocation = 0.5f;
 
 	UPROPERTY(EditAnywhere)
 	float CrossHairYLocation = 0.33333f;
+
+	UPROPERTY(EditAnywhere)
+	float LineTraceRange = 1000000.f;
 };
