@@ -19,7 +19,10 @@ public:
 	ATank* GetAIControlledTank() const;
 	ATank* GetPlayerTank() const;
 
+	// called once on beginplay
 	virtual void BeginPlay() override;
 	
+	// called every frame
+	virtual void Tick(float DeltaTime) override;
 	
 };
